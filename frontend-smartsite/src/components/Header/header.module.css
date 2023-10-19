@@ -1,10 +1,41 @@
-.header {
+.logoContainer {
   background-color: black;
   padding: 20px;
   display: flex;
   justify-content: center;
+  margin-bottom: 35px;
 }
 
-.header img {
+.logoContainer img {
   max-width: 280px;
+}
+
+.textContainer {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.textContainer p {
+  color: rgba(0, 0, 0, 0.782);
+  font-size: 18px;
+}
+
+.heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  margin-bottom: 24px;
+  gap: 14px;
+}
+
+.headingBorder {
+  height: 8px;
+  width: 10%;
+  background-color: black;
 }
