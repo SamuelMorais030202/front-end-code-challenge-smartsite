@@ -1,0 +1,96 @@
+.formsContainer {
+  padding: 20px;
+  max-width: 70vw;
+  margin: auto;
+  border: 1px solid var(--light-grey);
+  border-radius: 5px;
+  box-shadow: 1px;
+  margin-top: 30px;
+}
+
+.formsHeading {
+  padding: 3px;
+}
+
+.formsHeading p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: var(--light-grey);
+  margin-bottom: 20px;
+}
+
+.formsHeading p img {
+  width: 30px;
+  height: 30px;
+}
+
+.formsHeading h3 {
+  color: var(--medium-text);
+  font-weight: 400;
+  font-size: 21px;
+  padding: 6px;
+  margin-bottom: 2px;
+}
+
+.formsOptions {
+  margin: 15px 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.formsOptions hr {
+  border: none;
+  border-top: 1px solid var(--light-grey);
+  margin: 3px 0;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  color: var(--light-grey);
+}
+
+.options label input {
+  margin-right: 8px;
+  color: black;
+}
+
+.formsSearch {
+  margin-top: 23px;
+}
+
+.formsSearchChackbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.formsSearchChackbox label input {
+  margin-right: 4px;
+}
+
+.formsSearchButtons {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.formsSearchButtons button {
+  width: 250px;
+  padding: 8px;
+  border: none;
+  font-weight: 600;
+}
+
+.formsSearchButtons button:first-child {
+  background-color: var(--yellow);
+}
+
+.formsSearchButtons button:last-child {
+  border: 1px solid var(--medium-text);
+}
