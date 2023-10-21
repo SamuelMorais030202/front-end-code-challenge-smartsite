@@ -1,0 +1,32 @@
+.legendContainer {
+  width: 70vw;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 48px;
+  gap: 20px;
+  background-color: var(--light-text);
+  padding: 30px;
+}
+
+.legendItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.legendImages {
+  display: flex;
+  gap: 12px;
+}
+
+.legendImage {
+  text-align: center;
+}
+
+.legendImage img {
+  width: 60px;
+  height: 60px;
+}
