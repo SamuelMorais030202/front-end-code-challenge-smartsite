@@ -14,7 +14,7 @@ const Forms = () => {
 
       <section className={styled.formsOptions}>
         <div className={styled.options}>
-          <label>
+          <label htmlFor='morning'>
             <input
               type="radio"
               name="training-period"
@@ -29,7 +29,7 @@ const Forms = () => {
         <hr />
 
         <div className={styled.options}>
-          <label>
+          <label htmlFor='afternoon'>
             <input
               type="radio"
               name="training-period"
@@ -44,7 +44,7 @@ const Forms = () => {
         <hr />
 
         <div className={styled.options}>
-          <label>
+          <label htmlFor='evening'>
             <input
               type="radio"
               name="training-period"
@@ -61,8 +61,8 @@ const Forms = () => {
 
       <section className={styled.formsSearch}>
         <div className={styled.formsSearchChackbox}>
-          <label>
-            <input type="checkbox" name="" id="" />
+          <label htmlFor='closed'>
+            <input type="checkbox" name="closed" id="closed" />
             Exibir unidades fechadas
           </label>
           <span>Resultados encontrados 0</span>
