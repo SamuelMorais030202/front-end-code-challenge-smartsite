@@ -1,6 +1,17 @@
 import styled from './forms.module.css';
+import useSearchContext from '../../hooks/useSearchContext';
 
 const Forms = () => {
+  const {
+    closed,
+    setTrainingPeriod,
+    setClosed
+  } = useSearchContext();
+
+  const handleRadioChange = (event : React.ChangeEvent<HTMLInputElement>) => {
+    setTrainingPeriod(event.target.value);
+  }
+
   return (
     <div className={styled.formsContainer}>
       <section className={styled.formsHeading}>
@@ -20,6 +31,7 @@ const Forms = () => {
               name="training-period"
               id="morning"
               value="morning"
+              onChange={handleRadioChange}
             />
             Manhã
           </label>
@@ -35,6 +47,7 @@ const Forms = () => {
               name="training-period"
               id="afternoon"
               value="afternoon"
+              onChange={handleRadioChange}
             />
             Tarde
           </label>
@@ -50,6 +63,7 @@ const Forms = () => {
               name="training-period"
               id="evening"
               value="evening"
+              onChange={handleRadioChange}
             />
             Noite
           </label>
@@ -62,7 +76,13 @@ const Forms = () => {
       <section className={styled.formsSearch}>
         <div className={styled.formsSearchChackbox}>
           <label htmlFor='closed'>
-            <input type="checkbox" name="closed" id="closed" />
+            <input
+              type="checkbox"
+              name="closed"
+              id="closed"
+              checked={closed}
+              onChange={ () => setClosed(!closed) }
+            />
             Exibir unidades fechadas
           </label>
           <span>Resultados encontrados 0</span>
