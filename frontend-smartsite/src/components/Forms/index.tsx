@@ -90,7 +90,12 @@ const Forms = () => {
 
         <div className={styled.formsSearchButtons}>
           <button>ENCONTRAR UNIDADE</button>
-          <button>LIMPAR</button>
+          <button
+            onClick={() => {
+              setTrainingPeriod("");
+              setClosed(false);
+            }}
+          >LIMPAR</button>
         </div>
       </section>
     </div>
