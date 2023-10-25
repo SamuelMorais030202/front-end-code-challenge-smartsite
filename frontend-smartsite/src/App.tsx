@@ -3,6 +3,7 @@ import Forms from './components/Forms';
 import Header from './components/Header';
 import Legend from './components/Legend';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import Footer from './components/Footer';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -20,6 +21,7 @@ function App() {
       <Forms />
       <Legend />
       <CardList />
+      <Footer />
     </QueryClientProvider>
   )
 }
