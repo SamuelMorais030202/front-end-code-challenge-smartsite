@@ -1,17 +1,35 @@
 import styled from './forms.module.css';
 import useSearchContext from '../../hooks/useSearchContext';
+import { useState } from 'react';
 
 const Forms = () => {
   const {
     closed,
+    trainingPeriod,
     setTrainingPeriod,
-    setClosed
+    setClosed,
+    numberOfUnits,
   } = useSearchContext();
 
+  const [changeSelectedPeriod, setChangeSelectedPeriod] = useState(trainingPeriod);
+  const [changeSelectedClose, setChangeSelectedClose] = useState(closed); 
+
   const handleRadioChange = (event : React.ChangeEvent<HTMLInputElement>) => {
-    setTrainingPeriod(event.target.value);
+    setChangeSelectedPeriod(event.target.value);
   }
 
+  const filteringGyms = () => {
+    setTrainingPeriod(changeSelectedPeriod);
+    setClosed(changeSelectedClose as boolean);
+  }
+
+  const handleClearFilters = () => {
+    setTrainingPeriod("");
+    setClosed(false);
+    setChangeSelectedClose(false);
+    setChangeSelectedPeriod("");
+  }
+ 
   return (
     <div className={styled.formsContainer}>
       <section className={styled.formsHeading}>
@@ -30,7 +48,8 @@ const Forms = () => {
               type="radio"
               name="training-period"
               id="morning"
-              value="morning"
+              value="06h 12h"
+              checked={changeSelectedPeriod === "06h 12h"}
               onChange={handleRadioChange}
             />
             Manhã
@@ -46,7 +65,8 @@ const Forms = () => {
               type="radio"
               name="training-period"
               id="afternoon"
-              value="afternoon"
+              value="12h 18h"
+              checked={changeSelectedPeriod === "12h 18h"}
               onChange={handleRadioChange}
             />
             Tarde
@@ -62,7 +82,8 @@ const Forms = () => {
               type="radio"
               name="training-period"
               id="evening"
-              value="evening"
+              value="18h 21h"
+              checked={changeSelectedPeriod === "18h 21h"}
               onChange={handleRadioChange}
             />
             Noite
@@ -80,21 +101,22 @@ const Forms = () => {
               type="checkbox"
               name="closed"
               id="closed"
-              checked={closed}
-              onChange={ () => setClosed(!closed) }
+              checked={changeSelectedClose as boolean}
+              onChange={ () => setChangeSelectedClose((prev) => !prev) }
             />
             Exibir unidades fechadas
           </label>
-          <span>Resultados encontrados 0</span>
+          <span>{`Resultados encontrados ${numberOfUnits}`}</span>
         </div>
 
         <div className={styled.formsSearchButtons}>
-          <button>ENCONTRAR UNIDADE</button>
           <button
-            onClick={() => {
-              setTrainingPeriod("");
-              setClosed(false);
-            }}
+            onClick={filteringGyms}
+          >
+            ENCONTRAR UNIDADE
+          </button>
+          <button
+            onClick={handleClearFilters}
           >LIMPAR</button>
         </div>
       </section>

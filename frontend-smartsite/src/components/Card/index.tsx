@@ -6,7 +6,7 @@ import styled from "./card.module.css";
 
 const Card = (props : DataResponseType) => {
   const sanitizedContent = DOMPurify.sanitize(props.content || "");
-
+ 
   return (
     <div className={styled.cardContainer}>
       <p>
