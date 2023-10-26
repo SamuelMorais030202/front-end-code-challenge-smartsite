@@ -9,7 +9,7 @@ const Card = (props : DataResponseType) => {
  
   return (
     <div className={styled.cardContainer}>
-      <p>
+      <p data-testid={`card-open-${props.title}`}>
         {
           props.opened
           ? <span className={styled.open}>Aberto</span>
@@ -20,6 +20,7 @@ const Card = (props : DataResponseType) => {
       <h3 className={styled.cardTitle}>{props.title}</h3>
 
       <div
+        data-testid={`card-address-${props.id}`}
         className={styled.cardAddress}
         dangerouslySetInnerHTML={{ __html: sanitizedContent }}
       />
@@ -40,8 +41,8 @@ const Card = (props : DataResponseType) => {
               {
                 props.schedules?.map((shedule, index) => (
                   <div key={index}>
-                    <h4>{shedule.weekdays}</h4>
-                    <p>{shedule.hour}</p>
+                    <h4 data-testid={`schedule-title-${index}`}>{shedule.weekdays}</h4>
+                    <p data-testid={`schedule-paragraph-${index}`}>{shedule.hour}</p>
                   </div>
                 ))
               }
