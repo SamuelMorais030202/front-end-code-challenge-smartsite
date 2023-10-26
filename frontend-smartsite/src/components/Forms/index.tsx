@@ -35,7 +35,7 @@ const Forms = () => {
       <section className={styled.formsHeading}>
         <p>
           <img src="/icon-hour.png" alt="ícon hour" />
-          Horário
+          <span data-testid="forms-hours">Horário</span>
         </p>
         <h3>Qual período quer treinar?</h3>
         <hr />

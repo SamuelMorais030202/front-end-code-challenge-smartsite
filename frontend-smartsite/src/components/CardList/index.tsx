@@ -12,13 +12,12 @@ const CardList = () => {
     return <p>Nenhuma academia encontrada.</p>;
   }
 
-  const period = trainingPeriod.split(' ');
-  const [startTreiningPeriod, endTreiningPeriod] = period;
-
   const list = data?.locations as DataResponseType[] || [];
 
   const isMatchTimeRange = (schedule: { hour: string }): boolean => {
     const [start,,end] = schedule.hour.split(' ');
+    const period = trainingPeriod.split(' ');
+    const [startTreiningPeriod, endTreiningPeriod] = period;
     return startTreiningPeriod >= start && endTreiningPeriod <= end;
   };
 
