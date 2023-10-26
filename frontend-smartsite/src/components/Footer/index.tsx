@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className={styled.footerContainer}>
       <img src={ logo } alt="Logo smart fit" />
-      <p>Todos os direitos reservados - 2023</p>
+      <p data-testid="footer-paragraph">Todos os direitos reservados - 2023</p>
     </footer>
   );
 };
